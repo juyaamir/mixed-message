@@ -1,14 +1,12 @@
 import quotes from "./quotes.json" with { type: 'json' };
 
-console.log(quotes.quotes[2])
-
-const message = document.getElementById('message');
+const authorMessage = document.getElementById('message');
+const authorName = document.querySelector('#name');
 const button = document.querySelector('#button');
-
 button.addEventListener('click', ()=>{
     const p = randomNumber();
-    message.innerHTML = JSON.stringify(quotes.quotes[p].quote);
-    message.innerHTML += JSON.stringify(quotes.quotes[p].author);
+    authorMessage.textContent = JSON.stringify(quotes.quotes[p].quote);
+    authorName.innerHTML = JSON.stringify(quotes.quotes[p].author);
 
 });
 
